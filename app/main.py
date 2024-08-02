@@ -1,6 +1,7 @@
 import requests
 from fastapi import APIRouter, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -50,3 +51,4 @@ def search_books(query: str, offset: int = 0):
 
 
 app.include_router(router)
+handler = Mangum(app)

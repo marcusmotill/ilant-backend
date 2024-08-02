@@ -18,7 +18,7 @@ class InfraStack(Stack):
             self,
             "FastAPILambda",
             code=_lambda.DockerImageCode.from_image_asset(
-                ".."
+                "../app"
             ),
         )
 

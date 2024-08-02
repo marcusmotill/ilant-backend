@@ -4,6 +4,9 @@
         "context": "..",
         "dockerfile": "Dockerfile"
     },
+    "mounts": [
+        "source=${env:HOME}${env:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind"
+    ],
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2":{
             "installZsh": "true",
@@ -19,7 +22,8 @@
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
             "ppa": "false"
-        }
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
 	// Configure tool-specific properties.
 	"customizations": {
